@@ -1,0 +1,22 @@
+package com.party.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.party.common.StatusVo;
+import com.party.repo.PartyRepository;
+import com.party.service.PartyService;
+import com.party.vo.PartyVO;
+
+@Service
+public class PartyServiceImpl implements PartyService{
+
+	@Autowired
+	private PartyRepository repo;
+	
+	@Override
+	public StatusVo savePartyDetails(PartyVO partyVO) {
+		return null;
+	}
+
+}

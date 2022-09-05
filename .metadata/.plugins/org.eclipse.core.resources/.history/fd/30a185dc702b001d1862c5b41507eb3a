@@ -1,0 +1,27 @@
+package com.party.entity;
+
+import java.io.Serializable;
+import java.math.BigInteger;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="party")
+public class PartyEntity implements Serializable{
+
+private static final long serialVersionUID = 4210721834283946946L;
+
+@Id
+@Column(name="party_id")
+private Integer partyId;
+
+
+private String 
+	
+ 
+
+
+}

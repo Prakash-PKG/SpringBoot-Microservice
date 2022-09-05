@@ -1,0 +1,10 @@
+package com.leader.common;
+
+@SuppressWarnings("serial")
+public class LeaderResourseNotExistException extends RuntimeException{
+	
+	public PartyResourseNotExistException(String str) {
+		super(str);
+	}
+
+}

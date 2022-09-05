@@ -1,0 +1,8 @@
+package com.leader.service.impl;
+
+import com.leader.service.LeaderService;
+
+@Service
+public class LeaderServiceImpl implements LeaderService{
+
+}

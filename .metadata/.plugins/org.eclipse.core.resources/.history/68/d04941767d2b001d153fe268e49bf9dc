@@ -1,0 +1,5 @@
+package com.party.service;
+
+public interface PartyService {
+
+}

@@ -1,0 +1,20 @@
+package com.leader.vo;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+public class LeaderVO {
+	
+	@Pattern(regexp ="^[0-9]+$")
+	@NotNull
+	private Integer leaderId;
+	
+	@Pattern(regexp ="^[0-9]+$")
+	@NotNull
+	private Integer partyId;
+	
+	private String leaderName;
+	
+	private String leaderState;
+
+}

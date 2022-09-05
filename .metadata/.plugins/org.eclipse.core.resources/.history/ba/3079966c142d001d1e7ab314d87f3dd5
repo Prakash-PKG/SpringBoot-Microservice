@@ -1,0 +1,16 @@
+package com.party.common;
+
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+	
+	
+	public ExceptionResponse resourceNotFound(PartyResourseNotExistException ex) {
+		ExceptionResponse exRespstatus=new ExceptionResponse();
+		return 
+	}
+
+	
+
+}

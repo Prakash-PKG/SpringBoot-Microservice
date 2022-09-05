@@ -1,0 +1,33 @@
+package com.leader.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.leader.common.StatusVo;
+import com.leader.service.LeaderService;
+import com.leader.vo.LeaderVO;
+
+
+
+
+
+@RestController
+@RequestMapping("/leader")
+public class LeaderController {
+	
+	
+	@Autowired
+	private LeaderService leaderServic;
+	
+	@PostMapping(value="/register",produces=MediaType.APPLICATION_JSON_VALUE)
+	public StatusVo registerPartyDetails(@RequestBody LeaderVO leaderVO) {
+	StatusVo statusVo=partyService.savePartyDetails(partyVO);
+	return statusVo;
+	}	
+
+
+}

@@ -1,0 +1,11 @@
+package com.party.repo;
+
+import java.math.BigInteger;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.party.entity.PartyEntity;
+
+public interface PartyRepository extends JpaRepository<PartyEntity, BigInteger>{
+
+}

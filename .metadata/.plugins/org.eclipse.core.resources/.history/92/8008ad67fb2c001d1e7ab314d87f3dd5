@@ -1,0 +1,13 @@
+package com.leader.vo;
+
+public class LeaderVo {
+	
+	private Integer leaderId;
+	
+	private Integer partyId;
+	
+	private String leaderName;
+	
+	private String leaderState;
+
+}

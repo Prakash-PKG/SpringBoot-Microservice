@@ -1,0 +1,20 @@
+package com.party.common;
+
+import org.apache.http.HttpStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import io.micrometer.core.ipc.http.HttpSender;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+	
+	
+	public ExceptionResponse resourceNotFound(PartyResourseNotExistException ex) {
+		ExceptionResponse exRespstatus=new ExceptionResponse();
+		exRespstatus.setStatusCode(HttpStatus.SC_NOT_FOUND);
+		return exRespstatus;
+	}
+
+	
+
+}

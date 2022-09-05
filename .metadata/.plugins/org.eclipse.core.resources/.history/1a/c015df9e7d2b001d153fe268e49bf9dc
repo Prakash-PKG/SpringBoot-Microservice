@@ -1,0 +1,18 @@
+package com.party.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.party.common.StatusVo;
+import com.party.service.PartyService;
+import com.party.vo.PartyVO;
+
+@Service
+public class PartyServiceImpl implements PartyService{
+
+	@Override
+	public StatusVo savePartyDetails(PartyVO partyVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

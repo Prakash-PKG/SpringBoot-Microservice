@@ -1,0 +1,8 @@
+package com.party.vo;
+
+public class PartyVO {
+
+	private Integer partyId;
+	
+	
+}

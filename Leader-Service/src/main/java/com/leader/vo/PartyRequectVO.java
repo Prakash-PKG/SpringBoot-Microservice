@@ -1,0 +1,29 @@
+package com.leader.vo;
+
+import com.leader.common.StatusVo;
+
+public class PartyRequectVO {
+	
+	private Integer partyId;
+	
+	private StatusVo statusVo;
+
+	public Integer getPartyId() {
+		return partyId;
+	}
+
+	public void setPartyId(Integer partyId) {
+		this.partyId = partyId;
+	}
+
+	public StatusVo getStatusVo() {
+		return statusVo;
+	}
+
+	public void setStatusVo(StatusVo statusVo) {
+		this.statusVo = statusVo;
+	}
+  
+	
+	
+}

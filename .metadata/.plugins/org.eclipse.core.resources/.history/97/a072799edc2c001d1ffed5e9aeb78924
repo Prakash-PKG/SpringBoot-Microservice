@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+    
+  cloud:
+    gateway:
+      routes:
+        - id: party-service
+         uri: lb://Party-Service
+         predicates:
+          - Path=/

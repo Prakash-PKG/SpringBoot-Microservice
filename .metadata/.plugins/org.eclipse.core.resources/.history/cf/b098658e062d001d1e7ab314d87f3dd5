@@ -1,0 +1,6 @@
+package com.leader.configuration;
+
+@Conf
+public class AppConfiguration {
+
+}

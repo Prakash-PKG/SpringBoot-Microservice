@@ -1,0 +1,7 @@
+package com.party.common;
+
+@SuppressWarnings("serial")
+public class ParthyResourseNotExistException extends RuntimeException{
+	
+
+}

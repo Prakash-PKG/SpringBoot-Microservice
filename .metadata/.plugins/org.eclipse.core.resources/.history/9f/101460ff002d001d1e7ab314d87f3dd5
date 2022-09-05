@@ -1,0 +1,23 @@
+package com.leader.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.leader.common.StatusVo;
+import com.leader.repo.LeaderRepository;
+import com.leader.service.LeaderService;
+import com.leader.vo.LeaderVO;
+
+@Service
+public class LeaderServiceImpl implements LeaderService{
+
+	@Autowired
+	private LeaderRepository  leaderRepository;
+	
+	@Override
+	public StatusVo registerLeaderDetails(LeaderVO leaderVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

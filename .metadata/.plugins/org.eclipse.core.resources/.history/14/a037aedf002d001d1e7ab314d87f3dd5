@@ -1,0 +1,10 @@
+package com.leader.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.leader.service.LeaderService;
+
+@Service
+public class LeaderServiceImpl implements LeaderService{
+
+}

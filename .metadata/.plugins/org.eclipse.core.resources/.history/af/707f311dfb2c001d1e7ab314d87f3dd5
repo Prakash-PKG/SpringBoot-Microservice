@@ -1,0 +1,30 @@
+package com.leader.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="leader")
+public class LeaderEntity implements Serializable{
+	
+
+	private static final long serialVersionUID = 113759191732394663L;
+
+	@Id
+	@Column(name="leader_id")
+	private Integer leaderId;
+	
+	@Column(name="party_id")
+	private Integer partyId;
+
+	@Column(name="leader_name")
+	private String leaderName;
+	
+	@Column(name="leader_state")
+	private String leaderState;
+
+}

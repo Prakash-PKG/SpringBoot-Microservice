@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+    
+  cloud:
+    gateway:
+      routes:
+        - id: party-service
+          uri: lb://Party-Service
+          predicates:
+           - Path=/party/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      
+  instance:
+    hostname: localhost
+
+server:
+  port: 8989
+           

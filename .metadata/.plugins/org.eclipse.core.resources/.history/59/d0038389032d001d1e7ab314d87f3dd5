@@ -1,0 +1,7 @@
+package com.leader.vo;
+
+public class PartyRequectVO {
+	
+	private Integer partyId;
+
+}

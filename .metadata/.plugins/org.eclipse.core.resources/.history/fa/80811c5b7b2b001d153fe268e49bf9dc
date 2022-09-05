@@ -1,0 +1,12 @@
+package com.party.vo;
+
+public class PartyVO {
+
+	private Integer partyId;
+	
+	private String partyName;
+	
+	private String founderName;
+	
+	private Integer founderYear;
+}

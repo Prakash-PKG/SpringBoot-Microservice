@@ -1,0 +1,23 @@
+package com.party.common;
+
+import org.apache.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+	
+	@ExceptionHandler(PartyResourseNotExistException.class)
+	public ResponseEntity<ExceptionResponse> resourceNotFound(PartyResourseNotExistException ex) {
+		ExceptionResponse exRespstatus=new ExceptionResponse();
+		exRespstatus.setStatusCode(HttpStatus.SC_NOT_FOUND);
+		exRespstatus.setIsSuccess(false);
+		exRespstatus.setMessage(ex.getMessage());
+		return new ResponseEntity<ExceptionResponse>(exRespstatus,null, HttpStatus.SC_NOT_FOUND);
+	}
+
+	
+
+}

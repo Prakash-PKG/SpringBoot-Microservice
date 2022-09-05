@@ -1,0 +1,13 @@
+package com.party.common;
+
+public class ExceptionResponse {
+	
+    private String statusCode;
+	
+	private Boolean isSuccess;
+	
+	private String message;
+
+	
+
+}

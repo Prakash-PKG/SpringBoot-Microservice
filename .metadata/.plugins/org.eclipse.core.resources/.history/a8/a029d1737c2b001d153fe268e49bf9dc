@@ -1,0 +1,14 @@
+package com.party.common;
+
+public class StatusVo {
+	
+	private Integer statusCode;
+	
+	private Boolean isSuccess;
+	
+	private String message;
+	
+	private String exceptionMessage;
+	
+
+}

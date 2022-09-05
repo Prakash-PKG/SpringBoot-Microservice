@@ -1,0 +1,14 @@
+server.port=9091
+spring.application.name=Party-Service
+
+#DB Connection Properties
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.datasource.url=jdbc:sqlserver://IP:1433;database=vPolitical
+spring.datasource.username=sa
+spring.datasource.password=pass@word1
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql = true
+
+## Hibernate Properties
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.SQLServer2012Dialect
+spring.jpa.hibernate.ddl-auto = update

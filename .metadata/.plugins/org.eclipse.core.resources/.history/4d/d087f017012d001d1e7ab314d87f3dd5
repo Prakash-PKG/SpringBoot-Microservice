@@ -1,0 +1,37 @@
+package com.leader.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.leader.common.StatusVo;
+import com.leader.entity.LeaderEntity;
+import com.leader.repo.LeaderRepository;
+import com.leader.service.LeaderService;
+import com.leader.vo.LeaderVO;
+import com.party.common.PartyUtil;
+import com.party.entity.PartyEntity;
+
+@Service
+public class LeaderServiceImpl implements LeaderService{
+
+	@Autowired
+	private LeaderRepository  leaderRepository;
+	
+	@Override
+	public StatusVo registerLeaderDetails(LeaderVO leaderVO) {
+		StatusVo statusVo=new StatusVo();
+		try {
+		LeaderEntity leaderEntity=new LeaderEntity();
+		partyEntity.setPartyId(partyVO.getPartyId());
+		partyEntity.setPartyName(partyVO.getPartyName());
+		partyEntity.setFounderName(partyVO.getFounderName());
+		partyEntity.setFounderYear(partyVO.getFounderYear());
+		partyEntity=partyRepository.save(partyEntity);
+		statusVo=PartyUtil.getStatusDetails(200,true,"Party Registred Successfully","");
+		}catch(Exception ex) {
+			
+		}
+		return statusVo;
+	}
+
+}

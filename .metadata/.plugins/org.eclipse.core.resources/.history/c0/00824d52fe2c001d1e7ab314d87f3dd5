@@ -1,0 +1,42 @@
+package com.party.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.party.common.PartyUtil;
+import com.party.common.StatusVo;
+import com.party.entity.PartyEntity;
+import com.party.repo.PartyRepository;
+import com.party.service.PartyService;
+import com.party.vo.PartyVO;
+
+@Service
+public class PartyServiceImpl implements PartyService{
+
+	@Autowired
+	private PartyRepository partyRepository;
+	
+	@Override
+	public StatusVo savePartyDetails(PartyVO partyVO) {
+		StatusVo statusVo=new StatusVo();
+		try {
+		PartyEntity partyEntity=new PartyEntity();
+		partyEntity.setPartyId(partyVO.getPartyId());
+		partyEntity.setPartyName(partyVO.getPartyName());
+		partyEntity.setFounderName(partyVO.getFounderName());
+		partyEntity.setFounderYear(partyVO.getFounderYear());
+		partyEntity=partyRepository.save(partyEntity);
+		statusVo=PartyUtil.getStatusDetails(200,true,"Party Registred Successfully","");
+		}catch(Exception ex) {
+			
+		}
+		return statusVo;
+	}
+
+	@Override
+	public StatusVo getPartyDetailsById(Integer partyId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

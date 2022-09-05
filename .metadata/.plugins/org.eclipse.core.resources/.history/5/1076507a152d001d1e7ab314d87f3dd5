@@ -1,0 +1,43 @@
+package com.party.common;
+
+public class ExceptionResponse {
+	
+    private String statusCode;
+	
+	private Boolean isSuccess;
+	
+	private String message;
+
+	public String getStatusCode() {
+		return statusCode;
+	}
+
+	public void setStatusCode(String statusCode) {
+		this.statusCode = statusCode;
+	}
+
+	public Boolean getIsSuccess() {
+		return isSuccess;
+	}
+
+	public void setIsSuccess(Boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	@Override
+	public String toString() {
+		return "ExceptionResponse [statusCode=" + statusCode + ", isSuccess=" + isSuccess + ", message=" + message
+				+ "]";
+	}
+
+	
+
+}

@@ -1,0 +1,76 @@
+package com.leader.service.impl;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.leader.common.LeaderUtil;
+import com.leader.common.StatusVo;
+import com.leader.entity.LeaderEntity;
+import com.leader.repo.LeaderRepository;
+import com.leader.service.LeaderService;
+import com.leader.vo.LeaderVO;
+import com.leader.vo.PartyRequectVO;
+import com.party.common.PartyUtil;
+import com.party.entity.PartyEntity;
+
+@Service
+public class LeaderServiceImpl implements LeaderService{
+
+	@Autowired
+	private LeaderRepository  leaderRepository;
+	
+	@Autowired
+	private RestTemplate rt;
+	
+	@Override
+	public StatusVo registerLeaderDetails(LeaderVO leaderVO) {
+		StatusVo statusVo=new StatusVo();
+		PartyRequectVO partyReqVo=new PartyRequectVO();
+		partyReqVo.setPartyId(leaderVO.getPartyId());
+		partyReqVo.setStatusVo(statusVo);
+		try {
+		PartyRequectVO status=this.rt.postForObject("http://Party-Service/party/getParty", partyReqVo,PartyRequectVO.class);
+		if(status.getStatusVo().getIsSuccess() && status.getStatusVo().getStatusCode()==200 ) {
+		LeaderEntity leaderEntity=new LeaderEntity();
+		leaderEntity.setLeaderId(leaderVO.getLeaderId());
+		leaderEntity.setPartyId(leaderVO.getPartyId());
+		leaderEntity.setLeaderName(leaderVO.getLeaderName());
+		leaderEntity.setLeaderState(leaderVO.getLeaderState());
+		leaderEntity=leaderRepository.save(leaderEntity);
+		statusVo=LeaderUtil.getStatusDetails(200,true,"Leader Registred Successfully","");
+		}else {
+		statusVo=status.getStatusVo();
+		}
+		}catch(Exception ex) {
+			
+		}
+		return statusVo;
+	}
+
+	@Override
+	public boolean isLeaderExist(Number leaderId) {
+	return leaderRepository.existsById(Integer.parseInt(leaderId.toString()));
+		}
+
+	@Override
+	public StatusVo deleteLeaderById(Number leaderId) {
+		PartyRequectVO statusVo=new PartyRequectVO();
+		StatusVo status=new StatusVo();
+		Optional<LeaderEntity> party= partyRepository.findById(partyRequectVO.getPartyId());
+		if(party.isPresent()) {
+			status=PartyUtil.getStatusDetails(200,true,"Party Already Registred","");	
+			statusVo.setStatusVo(status);
+			statusVo.setPartyId(partyRequectVO.getPartyId());
+		}else {
+			status=PartyUtil.getStatusDetails(404,false,"Party Need to Register Before Leader Registaration","");	
+			statusVo.setStatusVo(status);
+			statusVo.setPartyId(partyRequectVO.getPartyId());
+		}
+		return statusVo;
+	}
+	
+
+}

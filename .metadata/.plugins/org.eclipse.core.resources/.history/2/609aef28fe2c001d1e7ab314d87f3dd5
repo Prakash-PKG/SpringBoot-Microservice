@@ -1,0 +1,13 @@
+package com.party.service;
+
+import com.party.common.StatusVo;
+import com.party.vo.PartyVO;
+
+public interface PartyService {
+
+	StatusVo savePartyDetails(PartyVO partyVO);
+	
+	StatusVo getPartyDetailsById(PartyVO partyVO);
+	
+
+}

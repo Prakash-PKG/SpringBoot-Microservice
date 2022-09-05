@@ -1,0 +1,5 @@
+package com.party.entity;
+
+public class PartyEntity {
+
+}

@@ -1,0 +1,5 @@
+package com.party.service.impl;
+
+public class PartyServiceImpl implements PartyService{
+
+}

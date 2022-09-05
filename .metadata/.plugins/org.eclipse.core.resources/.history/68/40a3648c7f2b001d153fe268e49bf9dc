@@ -1,0 +1,11 @@
+package com.party.common;
+
+public class PartyUtil {
+
+	public static StatusVo getStatusDetails(int statusCode, boolean flag, String message, String exceptMsg) {
+		return null;
+	}
+	
+
+
+}

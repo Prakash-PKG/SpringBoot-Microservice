@@ -1,0 +1,5 @@
+package com.leader.entity;
+
+public class LeaderEntity {
+
+}

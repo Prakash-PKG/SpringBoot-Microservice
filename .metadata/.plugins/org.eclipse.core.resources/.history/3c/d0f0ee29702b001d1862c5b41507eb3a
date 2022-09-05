@@ -1,0 +1,15 @@
+package com.party.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="party")
+public class PartyEntity implements Serializable{
+	
+ 
+
+
+}
