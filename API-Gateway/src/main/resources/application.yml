@@ -13,6 +13,10 @@ spring:
           uri: lb://leader-Service
           predicates:
            - Path=/leader/** 
+        - id: developement-service
+          uri: lb://Developement-Service
+          predicates:
+           - Path=/developement/** 
 
 eureka:
   client:

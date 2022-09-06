@@ -19,5 +19,24 @@ public class GlobalExceptionHandler {
 	}
 
 	
+	@ExceptionHandler(PartyResourseNotExistException.class)
+	public ResponseEntity<ExceptionResponse> partyResourceNotFound(PartyResourseNotExistException ex) {
+		ExceptionResponse exRespstatus=new ExceptionResponse();
+		exRespstatus.setStatusCode(HttpStatus.SC_NOT_FOUND);
+		exRespstatus.setIsSuccess(false);
+		exRespstatus.setMessage(ex.getMessage());
+		return new ResponseEntity<ExceptionResponse>(exRespstatus,null, HttpStatus.SC_NOT_FOUND);
+	}
+	
+	
+	@ExceptionHandler(PartyIdandLeadIdNotExistException.class)
+	public ResponseEntity<ExceptionResponse> partyIdandLeaderIdResourceNotFound(PartyIdandLeadIdNotExistException ex) {
+		ExceptionResponse exRespstatus=new ExceptionResponse();
+		exRespstatus.setStatusCode(HttpStatus.SC_NOT_FOUND);
+		exRespstatus.setIsSuccess(false);
+		exRespstatus.setMessage(ex.getMessage());
+		return new ResponseEntity<ExceptionResponse>(exRespstatus,null, HttpStatus.SC_NOT_FOUND);
+	}
+	
 
 }

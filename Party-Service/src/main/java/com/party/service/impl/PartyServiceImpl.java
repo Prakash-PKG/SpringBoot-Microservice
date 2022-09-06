@@ -1,16 +1,20 @@
 package com.party.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.util.Optionals;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import com.party.common.PartyUtil;
 import com.party.common.StatusVo;
 import com.party.entity.PartyEntity;
 import com.party.repo.PartyRepository;
 import com.party.service.PartyService;
+import com.party.vo.LeadDetailsRespVo;
+import com.party.vo.LeaderVO;
 import com.party.vo.PartyRequectVO;
 import com.party.vo.PartyVO;
 
@@ -19,6 +23,9 @@ public class PartyServiceImpl implements PartyService{
 
 	@Autowired
 	private PartyRepository partyRepository;
+	
+	@Autowired
+	private RestTemplate rt;
 	
 	@Override
 	public StatusVo savePartyDetails(PartyVO partyVO) {
@@ -69,6 +76,23 @@ public class PartyServiceImpl implements PartyService{
 	@Override
 	public boolean isPartyExist(Number partyId) {
 		return partyRepository.existsById(Integer.parseInt(partyId.toString()));
+	}
+
+	@Override
+	public List<LeaderVO> getAllLeadersParty(Number partyId) {
+		LeadDetailsRespVo reqResp=new LeadDetailsRespVo();
+		List<LeaderVO> ldVo=new ArrayList<>();
+		reqResp.setPartyId(Integer.parseInt(partyId.toString()));
+		try {
+		 reqResp=this.rt.postForObject("http://Leader-Service/leader/getAllLeadersParty", reqResp,LeadDetailsRespVo.class);
+		if(reqResp.getStatus().getIsSuccess() &&reqResp.getStatus().getStatusCode()==200 ) {
+			ldVo=reqResp.getLeadVoList();
+		    }
+		
+		}catch(Exception ex) {
+			
+		}
+		return ldVo;
 	}
 
 }
